@@ -9,7 +9,7 @@ describe BankReportParser::Adapters::LAFISE, ".process_row" do
     "Transacción" => "Pago carro"
   } }
 
-  subject { described_class.process_row(row) }
+  subject { described_class.parse_row(row) }
 
   its([:id]) { should == 132342 }
   its([:date]) { should == Time.new("2013/12/20") }

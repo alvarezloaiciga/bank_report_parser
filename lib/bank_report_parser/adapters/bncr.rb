@@ -1,7 +1,7 @@
 module BankReportParser
   module Adapters
     class BNCR
-      def self.process_row(csv_row)
+      def self.parse_row(csv_row)
         {
           id: csv_row["NumDocumento"],
           date: Time.new(csv_row["FechaMovimiento"]),
