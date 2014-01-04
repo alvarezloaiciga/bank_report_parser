@@ -10,9 +10,17 @@ describe BankReportParser::Parser, '.parse_csv' do
   end
 
   it "tells the given adapter to parse each row" do
-    row = double(:row)
-    allow(CSV).to receive(:foreach).and_yield(row)
+    csv_row = {}
+    allow(CSV).to receive(:foreach).and_yield(csv_row)
 
-    expect(adapter).to receive(:parse_row).with(row)
+    expect(adapter).to receive(:parse_row).with(csv_row)
+  end
+
+  it "creates a new row for each csv row" do
+    csv_row, parsed_row = {}, {}
+    allow(CSV).to receive(:foreach).and_yield(csv_row)
+    allow(adapter).to receive(:parse_row).with(csv_row) { parsed_row }
+
+    BankReportParser::Row.should_receive(:new).with(csv_row)
   end
 end
