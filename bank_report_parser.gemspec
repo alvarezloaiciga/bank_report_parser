@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'bank_report_parser'
-  s.version     = '0.0.1'
+  s.version     = '0.0.1.1'
   s.licenses    = ['MIT']
   s.summary     = "Parser for bank csvs"
   s.description = "Parser for bank csvs"
