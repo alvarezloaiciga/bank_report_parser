@@ -11,6 +11,10 @@ module BankReportParser
         }
       end
 
+      def self.separator
+        ";"
+      end
+
       private
 
       def self.type(csv_row)

@@ -17,3 +17,9 @@ describe BankReportParser::Adapters::LAFISE, ".process_row" do
   its([:description]) { should == "Pago carro" }
   its([:type]) { should == :debit }
 end
+
+describe BankReportParser::Adapters::LAFISE, ".separator" do
+  it "returns ;" do
+    expect(described_class.separator).to eq ";"
+  end
+end

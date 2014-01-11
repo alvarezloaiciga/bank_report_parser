@@ -35,3 +35,9 @@ describe BankReportParser::Adapters::BNCR, ".process_row" do
     its([:type]) { should == :debit }
   end
 end
+
+describe BankReportParser::Adapters::BNCR, ".separator" do
+  it "returns ;" do
+    expect(described_class.separator).to eq ";"
+  end
+end

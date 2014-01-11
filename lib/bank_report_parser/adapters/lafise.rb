@@ -10,6 +10,10 @@ module BankReportParser
           type: :debit
         }
       end
+
+      def self.separator
+        ";"
+      end
     end
   end
 end
